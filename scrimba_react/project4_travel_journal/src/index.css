@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter;
+}
+
+nav {
+  background: #F55A5A;
+  color: white;
+  padding: .75em;
+  display: flex;
+  justify-content: center;
+}
+
+nav img {
+  width: 40px;
+}
+
+h1 {
+  margin-left: .5em;
+  font-weight: 400;
+  font-size: 1rem;
+
+}
+
+/* TRIPS */
+.trips-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trip {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  margin: 1em 0;
+  justify-content: space-between;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #D3D3D3;
+  max-width: 800px
+}
+
+.trip:first-child {
+  margin-top: 2em;
+}
+
+.trip:last-child {
+  border-bottom:none;
+}
+
+.trip-content {
+  margin-left: 1em;
+}
+
+.trip-img {
+  max-width: 150px;
+  border-radius: 10px;
+  max-height: 250px;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+}
+
+.pin {
+  width: 20px;
+  margin-right: .2em;
+}
+
+.country {
+  font-size: .7rem;
+  letter-spacing: 1px;
+  margin-right: 1em;
+
+}
+
+.google-link {
+  font-size: .7rem;
+  color: #979797;
+}
+
+.google-link:hover {
+  color: #F55A5A;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.trip-description {
+  font-size: .85rem;
+  margin-top: 0;
+}
+
+.trip-dates {
+  font-weight: 700;
+  font-size: .85rem;
+}
