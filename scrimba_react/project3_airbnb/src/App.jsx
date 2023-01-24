@@ -1,21 +1,38 @@
 import Nav from '../components/Nav'
 import Main from '../components/Main'
 import Experiences from '../components/Experiences'
-
+import data from '../data'
+console.log(data);
 function App() {
+  const experiencesData = data.map(item => {
+    return (
+      <Experiences
+        key={item.id}
+        {...item}
+        // item={item}
+        // title={exp.title}
+        // description={exp.description}
+        // price={exp.price}
+        // img={exp.coverImg}
+        // stars={exp.stats.rating}
+        // reviewCount={exp.stats.reviewCount} location={exp.location}
+        // openSpots={exp.openSpots}
+      />
+    )
+  })
+
   return (
     <div>
       <Nav />
       <Main />
-      <Experiences
-        img='./src/assets/katie-zaferes.png'
-        stars='5.0'
-        description='Life lessons with Katie Zaferes'
-        price='$136'
-        reviewCount='6'
-      />
+      <div className='card'>
+        {experiencesData}
+      </div>
     </div>
   )
 }
 
 export default App
+
+
+// src={`../src/experience_images{props.img}`}

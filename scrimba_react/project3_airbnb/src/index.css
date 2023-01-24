@@ -35,7 +35,43 @@ nav {
 }
 
 .experience {
-  width: 250px;
+  width: 300px;
+  position: relative;
+  margin: 0 1.25em;
+}
+
+.experience-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  padding: 5px 7px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+.card {
+  width: 90%;
+  margin: 2em auto;
+  margin-bottom: 5em;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 650px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .experience {
+    margin: 0 auto 2em;
+  }
+
+  .container-main {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .experience-main-img {
