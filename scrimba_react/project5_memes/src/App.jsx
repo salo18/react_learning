@@ -2,21 +2,22 @@ import {useState} from 'react'
 import memesData from './memeData'
 
 function App() {
-  const [imageObj, setImage] = useState(
-    {
+  const [meme, setMeme] = useState({
       memeImg: 'http://i.imgflip.com/1bij.jpg',
       topText: '',
       bottomText: '',
     });
 
+  const [allMemeImages, setAllMemeImages] = useState(memesData);
+
   function getMemeImage() {
-    const array = memesData.data.memes;
+    const array = allMemeImages.data.memes;
     const idx = Math.floor(Math.random() * array.length);
     const imgURL = array[idx].url;
 
-    setImage(prevObject => {
+    setMeme(prevObject => {
       return {
-        memeImg: memeImg.imgURL,
+        memeImg: imgURL,
         topText: '',
         bottomText: '',
       }
@@ -36,7 +37,7 @@ function App() {
             <input className='input2' type='text' placeholder='end of meme'></input>
             <button onClick={getMemeImage}>Get new meme image 🖼️ </button>
           </div>
-        <img className='meme' src={imageObj.memeImg}></img>
+        <img className='meme' src={meme.memeImg}></img>
       </div>
     </div>
 
