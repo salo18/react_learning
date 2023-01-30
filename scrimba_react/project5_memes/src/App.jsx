@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import memesData from './memeData'
 
-function App() {
+export default function App() {
   const [meme, setMeme] = useState({
       memeImg: 'http://i.imgflip.com/1bij.jpg',
       topText: '',
@@ -15,11 +15,20 @@ function App() {
     const idx = Math.floor(Math.random() * array.length);
     const imgURL = array[idx].url;
 
-    setMeme(prevObject => {
+    setMeme(prevMeme => {
       return {
+        ...prevMeme,
         memeImg: imgURL,
-        topText: '',
-        bottomText: '',
+      }
+    });
+  }
+
+  function handleChange(event) {
+    const {name, value} = event.target;
+    setMeme(prevImg => {
+      return {
+        ...prevImg,
+        [name]: value,
       }
     });
   }
@@ -33,16 +42,35 @@ function App() {
 
       <div className='container'>
           <div className='form'>
-            <input type='text' placeholder='start of meme' ></input>
-            <input className='input2' type='text' placeholder='end of meme'></input>
-            <button onClick={getMemeImage}>Get new meme image 🖼️ </button>
+            <input
+              type='text'
+              placeholder='start of meme'
+              name='topText'
+              value={meme.topText}
+              onChange={handleChange}
+            />
+            <input
+              className='input2'
+              type='text'
+              placeholder='end of meme'
+              name='bottomText'
+              value={meme.bottomText}
+              onChange={handleChange}
+            />
+            <button
+              onClick={getMemeImage}>
+              Get new meme image 🖼️
+            </button>
           </div>
-        <img className='meme' src={meme.memeImg}></img>
+        <div className='meme-container'>
+          <img className='meme-img' src={meme.memeImg}></img>
+          <p className='meme-text top'>{meme.topText}</p>
+          <p className='meme-text bottom'>{meme.bottomText}</p>
+        </div>
+
       </div>
     </div>
 
 
   )
 }
-
-export default App
