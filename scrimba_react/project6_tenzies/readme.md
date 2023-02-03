@@ -2,7 +2,7 @@
 
 This was the final project in my React Basics course and was a great project to tie in all the concepts I have learned over the past 10 days.
 
-I had to fall back on Launch School's PEDAC solving process to really break down each aspect of the application into small problems that I could solve without getting overwhelmed.
+I had to fall back on Launch School's PEDAC solving process to break down each aspect of the application into small problems that I could solve without getting overwhelmed.
 
 Some of my struggles as I was thinking about this project:
   - I started with an `array` variable that contained the state of the ten dice. I soon realized that I would need to use an array of objects instead of an array of integers.
@@ -12,11 +12,14 @@ Once I had that 'aha' moment, it was just a matter of coding in the remaining fe
 
 Implemented the `useEffect` hook to check for changes to the state of the `array`.
 
+After finishing the app, I added a few extra features:
 
+V2
+DONE -- add a counter that tells you how many times you have clicked the roll button
+DONE -- track how long it took to win the game
+DONE -- track the highest score (judged by lowest nunber of rolls )
 
-Extend the app :
--- add a counter that tells you how many times you have clicked the roll button
+V3 - Future ideas
 -- add the ability to adjust how high / low the number goes to make it harder or easier to win
--- add a sound when the user wins?
--- track how long it took to win the game
+-- add a sound when the user wins
 -- save the best time / lowest number of rolls to local storage
